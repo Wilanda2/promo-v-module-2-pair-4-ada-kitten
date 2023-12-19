@@ -4,22 +4,21 @@
 
 let catList = document.querySelector(".js-list");
 
-/* Agregar el código del li desde HTMl 
-Repetir este proceso por cada gatito */
+const kittenOneImg = "https://dev.adalab.es/gato-siames.webp";
+const kittenOneTitle = "Anastasio";
+const kittenOneRace = "Siamés";
+const kittenOneDescription = "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.";
+
 const kittenOne = `<li class="card">
 <article>
   <img
     class="card_img"
-    src="https://dev.adalab.es/gato-siames.webp"
+    src= "${kittenOneImg}";
     alt="gatito"
   />
-  <h3 class="card_title">Anastacio</h3>
-  <h4 class="card_race">Siamés</h4>
-  <p class="card_description">
-            Porte elegante, su patrón de color tan característico y sus ojos
-            de un azul intenso, pero su historia se remonta a Asía al menos
-            hace 500 años, donde tuvo su origen muy posiblemente.
-   </p>
+  <h3 class="card_title">"${kittenOneTitle}"</h3>
+  <h4 class="card_race">"${kittenOneRace}"</h4>
+  <p class="card_description">"${kittenOneDescription}"</p>
 </article>
 </li>`;
 
@@ -54,4 +53,6 @@ const kittenThree = `<li class="card">
 </li>`
 
 
-catList.innerHTML = kittenOne + kittenTwo + kittenThree;
+catList.innerHTML = `<li>${kittenOne} </li>`;
+catList.innerHTML += `<li>${kittenTwo}</li>`;
+catList.innerHTML += `<li>${kittenThree}</li>`;
