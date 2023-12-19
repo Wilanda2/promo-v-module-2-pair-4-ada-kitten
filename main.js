@@ -9,32 +9,35 @@ const kittenOneTitle = "Anastasio";
 const kittenOneRace = "Siamés";
 const kittenOneDescription = "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.";
 
+const kittenTwoImg = "https://dev.adalab.es/sphynx-gato.webp";
+const kittenTwoTitle = "Fiona";
+const kittenTwoRace = "Sphynx";
+const kittenTwoDescription = "Produce fascinación y curiosidad. Exótico, raro, bello, extraño hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.";
+
+
+
 const kittenOne = `<li class="card">
 <article>
   <img
     class="card_img"
-    src= "${kittenOneImg}";
+    src= ${kittenOneImg}
     alt="gatito"
   />
-  <h3 class="card_title">"${kittenOneTitle}"</h3>
-  <h4 class="card_race">"${kittenOneRace}"</h4>
-  <p class="card_description">"${kittenOneDescription}"</p>
+  <h3 class="card_title">${kittenOneTitle}</h3>
+  <h4 class="card_race">${kittenOneRace}</h4>
+  <p class="card_description">${kittenOneDescription}</p>
 </article>
-</li>`;
+</li>`
 
 const kittenTwo = `<li class="card">
 <img
   class="card_img"
-  src="https://dev.adalab.es/sphynx-gato.webp"
+  src=${kittenTwoImg}
   alt="sphynx-cat"
 />
-<h3 class="card_title">Fiona</h3>
-<h4 class="card_race">Sphynx</h4>
-<p class="card_description">
-  Produce fascinación y curiosidad. Exótico, raro, bello, extraño…
-  hasta con pinta de alienígena han llegado a definir a esta raza
-  gatuna que se caracteriza por la «ausencia» de pelo.
-</p>
+<h3 class="card_title">${kittenTwoTitle}</h3>
+<h4 class="card_race">${kittenTwoRace}</h4>
+<p class="card_description">${kittenTwoDescription}</p>
 </li>`
 
 const kittenThree = `<li class="card">
