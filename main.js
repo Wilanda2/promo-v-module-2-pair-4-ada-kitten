@@ -76,8 +76,27 @@ btnAdd.addEventListener('click',()=>{
     labelMessageError.innerHTML = "¡Uy!Parece que has olvidado algo.";
   } else {
 
-    
   }
 });
 
 //¿Hemos de añadir los value a los elementos HTML para poder completar arriba la condición en caso de no cumplimentarse los campos?
+
+const searchDesc = document.querySelector ('.js_in_search_desc');
+const searchDesc_text = searchDesc.value;
+
+catList.innerHTML = '';
+
+if( kittenOneDescription .includes(searchDesc_text) ) {
+ catList.innerHTML += kittenOne;
+//  console.log('Mostrar resultados gato 1:', kittenOneDescription);
+  };
+  
+  if( kittenTwoDescription .includes(searchDesc_text) ) {
+    catList.innerHTML += kittenTwo;
+    // console.log('Mostrar resultados gato 2:', kittenTwoDescription);
+  };
+  
+  if( kittenThreeDescription .includes(searchDesc_text) ) {
+    catList.innerHTML += kittenThree;
+    // console.log('Mostrar resultados gato 3:', kittenThreeDescription);
+  };
