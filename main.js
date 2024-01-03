@@ -71,10 +71,13 @@ catList.innerHTML = `<li>${kittenOne} </li>`;
 catList.innerHTML += `<li>${kittenTwo}</li>`;
 catList.innerHTML += `<li>${kittenThree}</li>`;
 
-btnAdd.addEventListener('click',()=>{
+
+
+btnAdd.addEventListener('click',() => {
   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-    labelMessageError.innerHTML = "¡Uy!Parece que has olvidado algo.";
+    labelMessageError.innerHTML = "¡Uy! Parece que has olvidado algo.";
   } else {
+
 
   }
 });
@@ -100,3 +103,28 @@ if( kittenOneDescription .includes(searchDesc_text) ) {
     catList.innerHTML += kittenThree;
     // console.log('Mostrar resultados gato 3:', kittenThreeDescription);
   };
+
+  const formSection = document.querySelector('.js-new-form');
+  formSection.classList.remove('collapsed');
+  
+  btnAdd.addEventListener('click',() => {
+    if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+      labelMessageError.innerHTML = "¡Uy! Parece que has olvidado algo.";
+    } else {
+  
+    }
+  });
+
+const btnCancel = document.querySelector('.button-cancel');
+
+btnCancel.addEventListener('click', () => {
+  formSection.classList.add('collapsed');
+
+});
+
+
+
+
+
+
+
