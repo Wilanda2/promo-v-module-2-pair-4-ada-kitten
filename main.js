@@ -1,6 +1,6 @@
 'use strict';
 
-
+//VARIABLES:
 
 let catList = document.querySelector(".js-list");
 
@@ -29,6 +29,11 @@ const valueDesc = inputDesc.value;
 const valuePhoto = inputPhoto.value;
 const valueName = inputName.value;
 // const valueRace = inputRace.value;
+const btnCancel = document.querySelector('.button-cancel');
+const formSection = document.querySelector('.js-new-form');
+const searchDesc = document.querySelector ('.js_in_search_desc');
+const btnPlus = document.querySelector('.js-btnPlus');
+
 
 const kittenOne = `<li class="card">
 <article>
@@ -72,7 +77,7 @@ catList.innerHTML += `<li>${kittenTwo}</li>`;
 catList.innerHTML += `<li>${kittenThree}</li>`;
 
 
-
+//EVENTOS: 
 btnAdd.addEventListener('click',() => {
   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
     labelMessageError.innerHTML = "¡Uy! Parece que has olvidado algo.";
@@ -82,9 +87,42 @@ btnAdd.addEventListener('click',() => {
   }
 });
 
+btnAdd.addEventListener('click',() => {
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMessageError.innerHTML = "¡Uy! Parece que has olvidado algo.";
+  } else {
+
+  }
+});
+
+
+btnCancel.addEventListener('click', () => {
+formSection.classList.add('collapsed');
+
+});
+ // formSection.classList.remove('collapsed');
+//  formSection.classList.toggle('collapsed');
+
+// btnPlus.addEventListener('click', showNewCatForm ); 
+// btnPlus.addEventListener('click', hideNewCatForm ); 
+
+
+function showNewCatForm(event) {
+  event.preventDefault();
+  if (formSection.classList.contains('collapsed')) {
+    btnPlus.addEventListener('click', hideNewCatForm ); 
+  } else {
+    btnPlus.addEventListener('click', showNewCatForm );
+  }
+};
+
+
+
+
+
 //¿Hemos de añadir los value a los elementos HTML para poder completar arriba la condición en caso de no cumplimentarse los campos?
 
-const searchDesc = document.querySelector ('.js_in_search_desc');
+
 const searchDesc_text = searchDesc.value;
 
 catList.innerHTML = '';
@@ -104,27 +142,28 @@ if( kittenOneDescription .includes(searchDesc_text) ) {
     // console.log('Mostrar resultados gato 3:', kittenThreeDescription);
   };
 
-  const formSection = document.querySelector('.js-new-form');
-  formSection.classList.remove('collapsed');
+ 
+
+  //FUNCIONES:
+  function showNewCatForm() {
+    formSection.classList.remove('collapsed');
+  } ;
+
+  function hideNewCatForm() {
+    formSection.classList.add('collapsed');
+  } ;
+
+
+
+
+//PRIMER INTENTO ARROW:   const showNewCatForm = () => {
+//     formSection.classList.remove('collapsed');
+//   } ;
+
+//   btnPlus.addEventListener('click', showNewCatForm);
   
-  btnAdd.addEventListener('click',() => {
-    if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-      labelMessageError.innerHTML = "¡Uy! Parece que has olvidado algo.";
-    } else {
+//  const hideNewCatForm = () => {
+//   formSection.classList.add('collapsed');
+//  } ;
+//  btnPlus.addEventListener('click', hideNewCatForm);
   
-    }
-  });
-
-const btnCancel = document.querySelector('.button-cancel');
-
-btnCancel.addEventListener('click', () => {
-  formSection.classList.add('collapsed');
-
-});
-
-
-
-
-
-
-
