@@ -77,12 +77,23 @@ catList.innerHTML += `<li>${kittenTwo}</li>`;
 catList.innerHTML += `<li>${kittenThree}</li>`;
 
 
+
+ //FUNCIONES:
+ function showNewCatForm() {
+  formSection.classList.remove('collapsed');
+};
+
+function hideNewCatForm() {
+  formSection.classList.add('collapsed');
+};
+
+
+
 //EVENTOS: 
 btnAdd.addEventListener('click',() => {
   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
     labelMessageError.innerHTML = "¡Uy! Parece que has olvidado algo.";
   } else {
-
 
   }
 });
@@ -100,23 +111,18 @@ btnCancel.addEventListener('click', () => {
 formSection.classList.add('collapsed');
 
 });
- // formSection.classList.remove('collapsed');
-//  formSection.classList.toggle('collapsed');
-
-// btnPlus.addEventListener('click', showNewCatForm ); 
-// btnPlus.addEventListener('click', hideNewCatForm ); 
 
 
-function showNewCatForm(event) {
+function handleClickNewCatForm(event) {
   event.preventDefault();
   if (formSection.classList.contains('collapsed')) {
-    btnPlus.addEventListener('click', hideNewCatForm ); 
+    showNewCatForm();
   } else {
-    btnPlus.addEventListener('click', showNewCatForm );
+    hideNewCatForm();
   }
 };
 
-
+btnPlus.addEventListener('click', handleClickNewCatForm);
 
 
 
@@ -144,14 +150,7 @@ if( kittenOneDescription .includes(searchDesc_text) ) {
 
  
 
-  //FUNCIONES:
-  function showNewCatForm() {
-    formSection.classList.remove('collapsed');
-  } ;
-
-  function hideNewCatForm() {
-    formSection.classList.add('collapsed');
-  } ;
+ 
 
 
 
