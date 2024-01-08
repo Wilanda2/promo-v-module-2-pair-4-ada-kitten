@@ -22,12 +22,12 @@ const kittenThreeDescription = "Tienen la cabeza cuadrada y los ojos simétricos
 const btnAdd = document.querySelector('.js-btn-add');
 const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
+const inputRace = document.querySelector('.js-input-race');
 const inputName = document.querySelector('.js-input-name');
 const labelMessageError = document.querySelector('.js-label-error');
 
-const valueDesc = inputDesc.value;
-const valuePhoto = inputPhoto.value;
-const valueName = inputName.value;
+
+
 // const valueRace = inputRace.value;
 const btnCancel = document.querySelector('.button-cancel');
 const formSection = document.querySelector('.js-new-form');
@@ -79,6 +79,7 @@ catList.innerHTML += `<li>${kittenThree}</li>`;
 
 
  //FUNCIONES:
+
  function showNewCatForm() {
   formSection.classList.remove('collapsed');
 };
@@ -86,32 +87,6 @@ catList.innerHTML += `<li>${kittenThree}</li>`;
 function hideNewCatForm() {
   formSection.classList.add('collapsed');
 };
-
-
-
-//EVENTOS: 
-btnAdd.addEventListener('click',() => {
-  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-    labelMessageError.innerHTML = "¡Uy! Parece que has olvidado algo.";
-  } else {
-
-  }
-});
-
-btnAdd.addEventListener('click',() => {
-  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-    labelMessageError.innerHTML = "¡Uy! Parece que has olvidado algo.";
-  } else {
-
-  }
-});
-
-
-btnCancel.addEventListener('click', () => {
-formSection.classList.add('collapsed');
-
-});
-
 
 function handleClickNewCatForm(event) {
   event.preventDefault();
@@ -122,7 +97,40 @@ function handleClickNewCatForm(event) {
   }
 };
 
+function handleClickaddNewKitten(event) {
+  event.preventDefault();
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+
+
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMessageError.innerHTML = "¡Uy! Parece que has olvidado algo.";
+
+  }
+  else {
+    catList.innerHTML += `<li>${newKitten}}</li>`;
+    
+  }
+}
+
+
+// const valueDesc = inputDesc.value;
+// const valuePhoto = inputPhoto.value;
+// const valueName = inputName.value;
+//   inputName.innerHTML = valueName ;
+//console.log(inputName.value);
+
+//EVENTOS: 
+
+btnAdd.addEventListener('click', handleClickaddNewKitten);
+   
+btnCancel.addEventListener('click', () => {
+formSection.classList.add('collapsed');
+});
+
 btnPlus.addEventListener('click', handleClickNewCatForm);
+
 
 
 
